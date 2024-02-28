@@ -32,5 +32,14 @@
 
 #navbar li a:hover {
   color: rgb(23, 107, 135);
+}
 
+/* hero code starts here  */
+
+#hero {
+  background-image: url("Image/hero-image-3.avif");
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 25% right 0%;
 }
