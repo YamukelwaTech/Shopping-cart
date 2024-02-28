@@ -7,6 +7,10 @@
   padding: 20px 80px;
   background: #e3e6f3;
   box-shadow: 0 5px 15px rgb(132, 167, 161);
+  z-index: 999;
+  position: sticky;
+  top: 0%;
+  left: 0%;
 }
 
 /* navbar code starts here  */
@@ -42,4 +46,71 @@
   width: 100%;
   background-size: cover;
   background-position: top 25% right 0%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
+
+#hero h4, h2, h1, p  {
+  color: white;
+}
+
+#hero  h4 {
+  padding-bottom: 15px;
+}
+
+#hero button {
+  font-weight: bold;
+  color: white;
+  background-color: #171717;
+  padding: .5em 1em;
+  border: none;
+  border-radius: .2rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+ button span:not(:nth-child(6)) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  background-color: #176B87;
+  border-radius: 50%;
+  transition: .6s ease;
+}
+
+button span:nth-child(6) {
+  position: relative;
+}
+
+button span:nth-child(1) {
+  transform: translate(-3.3em, -4em);
+}
+
+button span:nth-child(2) {
+  transform: translate(-6em, 1.3em);
+}
+
+button span:nth-child(3) {
+  transform: translate(-.2em, 1.8em);
+}
+
+button span:nth-child(4) {
+  transform: translate(3.5em, 1.4em);
+}
+
+button span:nth-child(5) {
+  transform: translate(3.5em, -3.8em);
+}
+
+button:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
+}
+  
