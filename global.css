@@ -62,3 +62,8 @@ p {
   color: black;
   font-variation-settings: "FILL" 100, "wght" 800, "GRAD" 200, "opsz" 90;
 }
+
+.svgvectors{
+  width: 160px;
+  height: auto;
+}
