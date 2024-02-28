@@ -41,7 +41,7 @@
 /* hero code starts here  */
 
 #hero {
-  background-image: url("Image/hero-image-3.avif");
+  background-image: url("Image/blured\ hero.png");
   height: 60vh;
   width: 100%;
   background-size: cover;
@@ -52,6 +52,7 @@
   align-items: flex-start;
   justify-content: center;
 }
+
 
 #hero h4,
 h2,
