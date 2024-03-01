@@ -160,6 +160,14 @@ button:hover span:not(:nth-child(6)) {
   text-align: center;
 }
 
+#products .pro-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+
 #products .pro {
   width: 23%;
   min-width: 250px;
@@ -169,6 +177,7 @@ button:hover span:not(:nth-child(6)) {
   cursor: pointer;
   margin: 15px 0;
   transition: 0.2s ease;
+  position: relative;
 }
 
 #products .pro:hover {
@@ -181,11 +190,38 @@ button:hover span:not(:nth-child(6)) {
 }
 
 #products .pro .des {
-  text-align: start ;
+  text-align: start;
   padding: 10px 0;
 }
 
 #products .pro .des span {
   font-size: 20px;
   font-weight: bold;
+}
+
+#products .pro .des h5 {
+  padding-top: 7px;
+  font-size: 14px;
+}
+
+#products .pro .des h4 {
+  padding-top: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  color: red;
+}
+
+#products .pro .cart {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e3e6f3;
+  font-weight: 500;
+  color: red;
+  border: 1px solid #171717;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+
 }
