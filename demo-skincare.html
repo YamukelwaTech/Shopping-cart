@@ -89,7 +89,7 @@
             <!-- Logo
 					============================================= -->
             <div id="logo" class="mx-lg-auto col-lg-2 justify-content-center">
-             <a href=""><img src="./images/icons/logo-sm.png" alt=""></a>
+              <a href=""><img src="./images/icons/logo-sm.png" alt="" /></a>
             </div>
             <!-- #logo end -->
 
@@ -115,6 +115,7 @@
                     <h4 class="ls-0 text-transform-none">Shopping Cart</h4>
                   </div>
                   <div class="top-cart-items">
+                    <!-- Your cart items go here -->
                     <div class="top-cart-item">
                       <div class="top-cart-item-image position-relative">
                         <a href="demo-skincare-single.html"
@@ -123,7 +124,8 @@
                             alt="Blue Shoulder Bag"
                         /></a>
                         <span
-                          class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center"
+                          class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center remove-product"
+                          onclick="removeCartItem(this)"
                         >
                           <span class="visually-hidden">Remove Product</span
                           >&times;
@@ -141,32 +143,7 @@
                         <div class="top-cart-item-quantity">x 1</div>
                       </div>
                     </div>
-                    <div class="top-cart-item border-default">
-                      <div class="top-cart-item-image position-relative">
-                        <a href="demo-skincare-single.html"
-                          ><img
-                            src="demos/skincare/images/products/11.jpg"
-                            alt="Blue Shoulder Bag"
-                        /></a>
-                        <span
-                          class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center"
-                        >
-                          <span class="visually-hidden">Remove Product</span
-                          >&times;
-                        </span>
-                      </div>
-                      <div class="top-cart-item-desc">
-                        <div class="top-cart-item-desc-title">
-                          <a href="demo-skincare-single.html" class="fw-normal"
-                            >Clove Super Serum</a
-                          >
-                          <span class="top-cart-item-price d-block"
-                            >$12.49</span
-                          >
-                        </div>
-                        <div class="top-cart-item-quantity">x 2</div>
-                      </div>
-                    </div>
+                    <!-- Repeat the structure for other cart items -->
                   </div>
                   <div class="top-cart-action border-default">
                     <a
@@ -174,7 +151,9 @@
                       class="button button-small m-0"
                       >View Cart</a
                     >
-                    <span class="top-checkout-price">$54.97</span>
+                    <span class="top-checkout-price" id="totalPrice"
+                      >$54.97</span
+                    >
                   </div>
                 </div>
               </div>
@@ -1323,282 +1302,7 @@
               data-items-md="3"
               data-items-lg="4"
             >
-              <div class="oc-item">
-                <div class="product">
-                  <div class="product-image mb-2">
-                    <img
-                      src="demos/skincare/images/products/10.jpg"
-                      alt="..."
-                    />
-                    <div
-                      class="sale-flash badge bg-color rounded-0 fw-normal p-2"
-                    >
-                      50% Off*
-                    </div>
-                    <div class="bg-overlay">
-                      <div
-                        class="bg-overlay-content align-items-end justify-content-end"
-                        data-hover-animate="fadeIn"
-                      >
-                        <a
-                          href="demo-skincare-single.html"
-                          class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"
-                          ><span class="visually-hidden">Product Link</span></a
-                        >
-                        <a
-                          href="#"
-                          class="btn bg-color bg-opacity-75 text-light me-2 z-2"
-                          ><i class="bi-basket"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-desc text-center">
-                    <div class="product-title">
-                      <h3>
-                        <a href="demo-skincare-single.html" class="color"
-                          >Mitzee Cream</a
-                        >
-                      </h3>
-                    </div>
-                    <div class="product-price fw-normal mt-0 mb-2">
-                      <del class="op-07">$24.99</del> <ins>$12.49</ins>
-                    </div>
-                    <a
-                      href="demo-skincare-cart.html"
-                      class="button button-small px-5 button-border border-color m-0 color h-bg-color h-text-light mt-2"
-                      >Add to cart</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="oc-item">
-                <div class="product">
-                  <div class="product-image mb-2">
-                    <a href="demo-skincare-single.html"
-                      ><img
-                        src="demos/skincare/images/products/11.jpg"
-                        alt="..."
-                    /></a>
-                    <div class="bg-overlay">
-                      <div
-                        class="bg-overlay-content align-items-end justify-content-end"
-                        data-hover-animate="fadeIn"
-                      >
-                        <a
-                          href="demo-skincare-single.html"
-                          class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"
-                          ><span class="visually-hidden">Product Link</span></a
-                        >
-                        <a
-                          href="#"
-                          class="btn bg-color bg-opacity-75 text-light me-2 z-2"
-                          ><i class="bi-basket"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-desc text-center">
-                    <div class="product-title">
-                      <h3>
-                        <a href="demo-skincare-single.html" class="color"
-                          >Clove Tonka Oil</a
-                        >
-                      </h3>
-                    </div>
-                    <div class="product-price fw-normal mt-0 mb-2">$39.99</div>
-                    <a
-                      href="demo-skincare-cart.html"
-                      class="button button-small px-5 button-border border-color m-0 color h-bg-color h-text-light mt-2"
-                      >Add to cart</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="oc-item">
-                <div class="product">
-                  <div class="product-image mb-2">
-                    <a href="demo-skincare-single.html"
-                      ><img
-                        src="demos/skincare/images/products/15.jpg"
-                        alt="..."
-                    /></a>
-                    <div class="bg-overlay">
-                      <div
-                        class="bg-overlay-content align-items-end justify-content-end"
-                        data-hover-animate="fadeIn"
-                      >
-                        <a
-                          href="demo-skincare-single.html"
-                          class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"
-                          ><span class="visually-hidden">Product Link</span></a
-                        >
-                        <a
-                          href="#"
-                          class="btn bg-color bg-opacity-75 text-light me-2 z-2"
-                          ><i class="bi-basket"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-desc text-center">
-                    <div class="product-title">
-                      <h3>
-                        <a href="demo-skincare-single.html" class="color"
-                          >Stockholm Hair Oil</a
-                        >
-                      </h3>
-                    </div>
-                    <div class="product-price fw-normal mt-0 mb-2">$19.95</div>
-                    <a
-                      href="demo-skincare-cart.html"
-                      class="button button-small px-5 button-border border-color m-0 color h-bg-color h-text-light mt-2"
-                      >Add to cart</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="oc-item">
-                <div class="product">
-                  <div class="product-image mb-2">
-                    <a href="demo-skincare-single.html"
-                      ><img
-                        src="demos/skincare/images/products/13.jpg"
-                        alt="..."
-                    /></a>
-                    <div
-                      class="sale-flash badge bg-color rounded-0 fw-normal p-2"
-                    >
-                      Sale!
-                    </div>
-                    <div class="bg-overlay">
-                      <div
-                        class="bg-overlay-content align-items-end justify-content-end"
-                        data-hover-animate="fadeIn"
-                      >
-                        <a
-                          href="demo-skincare-single.html"
-                          class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"
-                          ><span class="visually-hidden">Product Link</span></a
-                        >
-                        <a
-                          href="#"
-                          class="btn bg-color bg-opacity-75 text-light me-2 z-2"
-                          ><i class="bi-basket"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-desc text-center">
-                    <div class="product-title">
-                      <h3>
-                        <a href="demo-skincare-single.html" class="color"
-                          >Romi Moisture</a
-                        >
-                      </h3>
-                    </div>
-                    <div class="product-price fw-normal mt-0 mb-2">
-                      <del class="op-07">$19.99</del> <ins>$11.99</ins>
-                    </div>
-                    <a
-                      href="demo-skincare-cart.html"
-                      class="button button-small px-5 button-border border-color m-0 color h-bg-color h-text-light mt-2"
-                      >Add to cart</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="oc-item">
-                <div class="product">
-                  <div class="product-image mb-2">
-                    <a href="demo-skincare-single.html"
-                      ><img
-                        src="demos/skincare/images/products/5.jpg"
-                        alt="..."
-                    /></a>
-                    <div class="bg-overlay">
-                      <div
-                        class="bg-overlay-content align-items-end justify-content-end"
-                        data-hover-animate="fadeIn"
-                      >
-                        <a
-                          href="demo-skincare-single.html"
-                          class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"
-                          ><span class="visually-hidden">Product Link</span></a
-                        >
-                        <a
-                          href="#"
-                          class="btn bg-color bg-opacity-75 text-light me-2 z-2"
-                          ><i class="bi-basket"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-desc text-center">
-                    <div class="product-title">
-                      <h3>
-                        <a href="demo-skincare-single.html" class="color"
-                          >Ouiao Super Serum</a
-                        >
-                      </h3>
-                    </div>
-                    <div class="product-price fw-normal mt-0 mb-2">$9.99</div>
-                    <a
-                      href="demo-skincare-cart.html"
-                      class="button button-small px-5 button-border border-color m-0 color h-bg-color h-text-light mt-2"
-                      >Add to cart</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="oc-item">
-                <div class="product">
-                  <div class="product-image mb-2">
-                    <a href="demo-skincare-single.html"
-                      ><img
-                        src="demos/skincare/images/products/14.jpg"
-                        alt="..."
-                    /></a>
-                    <div class="bg-overlay">
-                      <div
-                        class="bg-overlay-content align-items-end justify-content-end"
-                        data-hover-animate="fadeIn"
-                      >
-                        <a
-                          href="demo-skincare-single.html"
-                          class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"
-                          ><span class="visually-hidden">Product Link</span></a
-                        >
-                        <a
-                          href="#"
-                          class="btn bg-color bg-opacity-75 text-light me-2 z-2"
-                          ><i class="bi-basket"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-desc text-center">
-                    <div class="product-title">
-                      <h3>
-                        <a href="demo-skincare-single.html" class="color"
-                          >Tainyc Polish</a
-                        >
-                      </h3>
-                    </div>
-                    <div class="product-price fw-normal mt-0 mb-2">$129.99</div>
-                    <a
-                      href="demo-skincare-cart.html"
-                      class="button button-small px-5 button-border border-color m-0 color h-bg-color h-text-light mt-2"
-                      >Add to cart</a
-                    >
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </div>
 
@@ -2155,6 +1859,7 @@
 	============================================= -->
     <script src="js/jquery.js"></script>
     <script src="js/functions.js"></script>
+    <script src="script.js"></script>
 
     <!-- Revolution Slider
 	============================================= -->
