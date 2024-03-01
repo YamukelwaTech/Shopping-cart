@@ -315,3 +315,28 @@
 #sm-banner .banner-box2 {
   background-image: url(Image/Istore\ banner.png);
 }
+
+/* footer code starts here  */
+
+#footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#footer col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+#footer logo {
+  margin-bottom: 30px;
+}
+
+#footer h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: red !important;
+}
