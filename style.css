@@ -291,3 +291,27 @@
   transform: translate(-50%, -50%) scale(4);
   transition: 1.5s ease;
 }
+
+/* sm banner code starts here  */
+
+#sm-banner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#sm-banner .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(Image/sm-banner\ 2.png);
+  min-width: 700px;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#sm-banner .banner-box2 {
+  background-image: url(Image/Istore\ banner.png);
+}
