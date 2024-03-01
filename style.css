@@ -156,27 +156,27 @@ button:hover span:not(:nth-child(6)) {
 
 /* products code starts here  */
 
-#products1 {
+#products {
   text-align: center;
 }
 
-#products1 .pro {
+#products .pro {
   width: 23%;
   min-width: 250px;
   padding: 10px 12px;
   border: 1px solid #176b87;
   cursor: pointer;
-  margin: 15px o;
-  transition: o.2s ease;
+  margin: 15px 0;
+  transition: 0.2s ease;
 }
 
 
-#products1 .pro:hover {
+#products .pro:hover {
   box-shadow: 20px 20px 30px rgb(52, 73, 85);
 }
 
 
-#products1 .pro img {
+#products .pro img {
   width: 100%;
   border-radius: 20px;
 }
