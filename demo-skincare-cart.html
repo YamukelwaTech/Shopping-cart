@@ -119,48 +119,57 @@
 
       <!-- Content
 		============================================= -->
-    <div id="content">
-      <div class="content-wrap">
-        <div class="container">
-          <div class="row gutter-40">
-            <div class="col-xl-8">
-              <table class="table custom-cart-table mb-0">
-                <thead>
-                  <tr>
-                    <th class="fw-normal custom-cart-product-name">Product</th>
-                    <th class="fw-normal custom-cart-product-price">Unit Price</th>
-                    <th class="fw-normal custom-cart-product-quantity">Quantity</th>
-                    <th class="fw-normal custom-cart-product-subtotal">Total</th>
-                  </tr>
-                </thead>
-                <tbody id="customTotalPrice"></tbody>
-              </table>
-            </div>
-    
-            <div class="col-xl-4">
-              <div class="row col-mb-30">
-                <div class="col-12">
-                  <div class="grid-inner bg-color bg-opacity-10 p-5 rounded-6">
-                    <form class="row mb-0">
-                      <div class="col-12 form-group">
-                        <button
-                          class="button button-small button-border border-color m-0 color h-bg-color h-text-light w-100"
+      <div id="content">
+        <div class="content-wrap">
+          <div class="container">
+            <div class="row gutter-40">
+              <div class="col-xl-8">
+                <table class="table custom-cart-table mb-0">
+                  <thead>
+                    <tr>
+                      <th class="fw-normal custom-cart-product-name">
+                        Product
+                      </th>
+                      <th class="fw-normal custom-cart-product-price">
+                        Unit Price
+                      </th>
+                      <th class="fw-normal custom-cart-product-quantity">
+                        Quantity
+                      </th>
+                      <th class="fw-normal custom-cart-product-subtotal">
+                        Total
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="customTotalPrice"></tbody>
+                </table>
+              </div>
+
+              <div class="col-xl-4">
+                <div class="row col-mb-30">
+                  <div class="col-12">
+                    <div
+                      class="grid-inner bg-color bg-opacity-10 p-5 rounded-6"
+                    >
+                      <form class="row mb-0">
+                        <div class="col-12 form-group">
+                          <button
+                            class="button button-small button-border border-color m-0 color h-bg-color h-text-light w-100"
+                          >
+                            Update Totals
+                          </button>
+                        </div>
+                      </form>
+
+                      <div class="line border-color my-4 op-02"></div>
+
+                      <div class="table-responsive">
+                        <a
+                          href="shop.html"
+                          class="button text-light m-0 w-100 text-center"
+                          >Proceed to Checkout</a
                         >
-                          Update Totals
-                        </button>
                       </div>
-                    </form>
-    
-                    <div class="line border-color my-4 op-02"></div>
-    
-                    <div class="table-responsive">
-                      
-    
-                      <a
-                        href="shop.html"
-                        class="button text-light m-0 w-100 text-center"
-                        >Proceed to Checkout</a
-                      >
                     </div>
                   </div>
                 </div>
@@ -169,148 +178,10 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- #content end -->
-    
+      <!-- #content end -->
 
       <!-- Footer
 		============================================= -->
-      <footer id="footer" class="dark bg-black border-top-0">
-        <div class="container py-4">
-          <!-- Footer Widgets
-				============================================= -->
-          <div class="footer-widgets-wrap">
-            <div class="row col-mb-50">
-              <div class="col-md-4">
-                <div class="widget subscribe-widget">
-                  <h3
-                    class="text-transform-none ls-0 border-bottom d-inline-block mb-5"
-                  >
-                    Subscribe to Our Newsletter
-                  </h3>
-
-                  <p>
-                    Get Important News, Amazing Offers &amp; Inside Scoops
-                    weekly right to your Inbox.
-                  </p>
-                  <div class="widget-subscribe-form-result"></div>
-                  <form
-                    id="widget-subscribe-form"
-                    action="include/subscribe.php"
-                    method="post"
-                    class="mb-0"
-                  >
-                    <div class="input-group mx-auto">
-                      <input
-                        type="email"
-                        id="widget-subscribe-form-email"
-                        name="widget-subscribe-form-email"
-                        class="form-control required email"
-                        placeholder="Enter your Email"
-                      />
-                      <button class="btn border-start-0" type="submit">
-                        <i class="bi-arrow-right h-op-08"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6 offset-md-2">
-                <div class="widget widget_links">
-                  <h3
-                    class="text-transform-none ls-0 border-bottom d-inline-block mb-5"
-                  >
-                    Contact Us
-                  </h3>
-
-                  <ul>
-                    <li class="mb-2">
-                      <a
-                        class="ls-1 text-light"
-                        href="mailto:noreply@canvas.com"
-                        >noreply@canvas.com</a
-                      >
-                    </li>
-                    <li class="mb-2">
-                      <a class="ls-1 text-light" href="tel:+0011122233"
-                        >0-111-222-33</a
-                      >
-                    </li>
-                    <li>
-                      <a class="ls-1 text-light" href="demo-skincare-login.html"
-                        >Sign In/Register</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="widget widget_links">
-                  <h3
-                    class="text-transform-none ls-0 border-bottom d-inline-block mb-5"
-                  >
-                    Follow Us
-                  </h3>
-
-                  <ul>
-                    <li class="mb-2">
-                      <a
-                        class="ls-1 text-light"
-                        target="_blank"
-                        href="https://facebook.com/SemiColonWeb"
-                        >Facebook</a
-                      >
-                    </li>
-                    <li class="mb-2">
-                      <a
-                        class="ls-1 text-light"
-                        target="_blank"
-                        href="https://twitter.com/__semicolon"
-                        >Twitter</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="ls-1 text-light"
-                        target="_blank"
-                        href="https://instagram.com/semicolonweb"
-                        >Instagram</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Copyrights
-			============================================= -->
-        <div
-          id="copyrights"
-          style="border-top: 1px solid rgba(255, 255, 255, 0.2)"
-        >
-          <div class="container">
-            <div class="row col-mb-30">
-              <div class="col-md-6 text-center text-md-start">
-                Copyrights &copy; 2023 All Rights Reserved by Canvas Inc.
-              </div>
-
-              <div class="col-md-6 text-center text-md-end">
-                <a href="#" class="text-light op-03 h-op-05"
-                  ><u>Terms of Use</u></a
-                >
-                <span class="mx-2 text-light op-03">/</span>
-                <a href="#" class="text-light op-03 h-op-05"
-                  ><u>Privacy Policy</u></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- #copyrights end -->
-      </footer>
     </div>
     <!-- #wrapper end -->
 

@@ -88,15 +88,33 @@ function updateCartDisplay() {
   });
 
   // Calculate and display the total price
-  let totalPrice = cartItemsArray.reduce(function (total, item) {
+  let subtotal = cartItemsArray.reduce(function (total, item) {
     return total + item.price * item.quantity;
   }, 0);
 
-  // Display the total price in a separate row at the bottom
+  // Calculate total price and tax
+  let taxRate = 0.25; // 25% tax
+  let tax = subtotal * taxRate;
+  let totalPrice = subtotal + tax;
+
+  let subtotalRow = document.createElement("tr");
+  subtotalRow.innerHTML =
+    "<td colspan='3' class='fw-bold'>Subtotal</td><td class='fw-bold'>R" +
+    subtotal.toFixed(2) +
+    "</td><td></td>";
+  customTotalPriceElement.appendChild(subtotalRow);
+
+  let taxRow = document.createElement("tr");
+  taxRow.innerHTML =
+    "<td colspan='3' class='fw-bold'>Tax (25%)</td><td class='fw-bold'>R" +
+    tax.toFixed(2) +
+    "</td><td></td>";
+  customTotalPriceElement.appendChild(taxRow);
+
   let totalRow = document.createElement("tr");
   totalRow.innerHTML =
-    "<td colspan='3' class='fw-bold'>Total</td><td class='fw-bold'>R" +
+    "<td colspan='3' class='fw-bold'>Total (Including 25% Tax)</td><td class='fw-bold'>R" +
     totalPrice.toFixed(2) +
-    "</td><td></td>"; // Empty cell for the 'x' button in the total row
+    "</td><td></td>";
   customTotalPriceElement.appendChild(totalRow);
 }
