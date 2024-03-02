@@ -1,55 +1,61 @@
-function removeCartItem(element) {
-  var item = element.closest('.top-cart-item');
-  item.remove();
+let shoppingCart = [];
 
-  // Update total price
-  updateTotalPrice();
-}
+  // Function to add an item to the cart
+  function addToCart(name, price) {
+    const newItem = {
+      name: name,
+      price: price
+    };
 
-function updateTotalPrice() {
-  var totalPriceElement = document.getElementById('totalPrice');
-  var cartItems = document.querySelectorAll('.top-cart-item');
-  var totalPrice = 0;
+    shoppingCart.push(newItem);
+    updateCart();
+  }
 
-  cartItems.forEach(function (item) {
-    var priceElement = item.querySelector('.top-cart-item-price');
-    var price = parseFloat(priceElement.innerText.replace('$', ''));
-    var quantity = parseInt(item.querySelector('.top-cart-item-quantity').innerText.replace('x ', ''));
-    totalPrice += price * quantity;
-  });
+  // Function to remove an item from the cart
+  function removeCartItem(index) {
+    shoppingCart.splice(index, 1);
+    updateCart();
+  }
 
-  totalPriceElement.innerText = '$' + totalPrice.toFixed(2);
-}
+  // Function to update the cart and total price
+  function updateCart() {
+    const cartItemsContainer = document.getElementById("cartItems");
+    const totalPriceElement = document.getElementById("totalPrice");
 
+    // Clear existing items
+    cartItemsContainer.innerHTML = "";
 
-function addToCart(productName, productPrice) {
-  // Create a new cart item element
-  var cartItem = document.createElement('div');
-  cartItem.className = 'top-cart-item';
+    let totalPrice = 0;
 
-  // Build the cart item HTML structure
-  cartItem.innerHTML = `
-    <div class="top-cart-item-image position-relative">
-      <span class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center remove-product" onclick="removeCartItem(this)">
-        <span class="visually-hidden">Remove Product</span>&times;
-      </span>
-    </div>
-    <div class="top-cart-item-desc">
-      <div class="top-cart-item-desc-title">
-        <a href="demo-skincare-single.html" class="fw-normal">${productName}</a>
-        <span class="top-cart-item-price d-block">$${productPrice.toFixed(2)}</span>
-      </div>
-      <div class="top-cart-item-quantity">x 1</div>
-    </div>
-  `;
+    // Update cart items
+    shoppingCart.forEach((item, index) => {
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("top-cart-item");
 
-  // Append the cart item to the top cart
-  var topCartItems = document.querySelector('.top-cart-items');
-  topCartItems.appendChild(cartItem);
+      cartItem.innerHTML = `
+        <div class="top-cart-item-desc">
+          <div class="top-cart-item-desc-title">
+            <span class="fw-normal">${item.name}</span>
+            <span class="top-cart-item-price d-block">$${item.price.toFixed(2)}</span>
+          </div>
+          <div class="top-cart-item-quantity">
+            <button onclick="removeCartItem(${index})">Remove</button>
+          </div>
+        </div>
+      `;
 
-  // Update total price
-  updateTotalPrice();
-}
+      cartItemsContainer.appendChild(cartItem);
+
+      // Update total price
+      totalPrice += item.price;
+    });
+
+    // Update total price element
+    totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+  }
+
+ 
+
 
 
 

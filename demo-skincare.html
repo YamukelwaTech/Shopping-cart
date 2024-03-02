@@ -43,7 +43,8 @@
       >
         <div class="container text-center color">
           <div style="font-size: 0.9375rem">
-            Get 20% off* your First Order &amp; Free Shipping Upto $99
+            Get 20% off * your First Apple Product &amp; Free Shipping Up to
+            R399
           </div>
         </div>
       </div>
@@ -83,24 +84,28 @@
             <!-- Logo
 					============================================= -->
             <div id="logo" class="mx-lg-auto col-lg-2 justify-content-center">
-              <a href=""><img src="./images/icons/logo-sm.png" alt="" /></a>
+              <a class="color fst-italic" href="#">The Apple SA</a>
             </div>
             <!-- #logo end -->
 
             <div class="col-lg-5 d-flex justify-content-end">
-              <div class="primary-menu-trigger" data-target=".top-primary-menu">
-                <button
-                  class="cnvs-hamburger"
-                  type="button"
-                  title="Open Mobile Menu"
+              <div class="header-misc">
+                <div
+                  class="primary-menu-trigger"
+                  data-target=".top-primary-menu"
                 >
-                  <span class="cnvs-hamburger-box"
-                    ><span class="cnvs-hamburger-inner"></span
-                  ></span>
-                </button>
-              </div>
+                  <button
+                    class="cnvs-hamburger"
+                    type="button"
+                    title="Open Mobile Menu"
+                  >
+                    <span class="cnvs-hamburger-box"
+                      ><span class="cnvs-hamburger-inner"></span
+                    ></span>
+                  </button>
+                </div>
 
-              <!-- Top Cart
+                <!-- Top Cart
 							============================================= -->
               <div id="top-cart" class="header-misc-icon me-lg-4">
                 <a href="#" id="top-cart-trigger"><i class="bi-basket"></i></a>
@@ -108,55 +113,23 @@
                   <div class="top-cart-title">
                     <h4 class="ls-0 text-transform-none">Shopping Cart</h4>
                   </div>
-                  <div class="top-cart-items">
+                  <div class="top-cart-items" id="cartItems">
                     <!-- Your cart items go here -->
-                    <div class="top-cart-item">
-                      <div class="top-cart-item-image position-relative">
-                        <a href="demo-skincare-single.html"
-                          ><img
-                            src="demos/skincare/images/products/13.jpg"
-                            alt="Blue Shoulder Bag"
-                        /></a>
-                        <span
-                          class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center remove-product"
-                          onclick="removeCartItem(this)"
-                        >
-                          <span class="visually-hidden">Remove Product</span
-                          >&times;
-                        </span>
-                      </div>
-                      <div class="top-cart-item-desc">
-                        <div class="top-cart-item-desc-title">
-                          <a href="demo-skincare-single.html" class="fw-normal"
-                            >Âimtze Cream &amp; Lotions</a
-                          >
-                          <span class="top-cart-item-price d-block"
-                            >$29.99</span
-                          >
-                        </div>
-                        <div class="top-cart-item-quantity">x 1</div>
-                      </div>
-                    </div>
-                    <!-- Repeat the structure for other cart items -->
                   </div>
                   <div class="top-cart-action border-default">
-                    <a
-                      href="demo-skincare-cart.html"
-                      class="button button-small m-0"
-                      >View Cart</a
-                    >
-                    <span class="top-checkout-price" id="totalPrice"
-                      >$54.97</span
-                    >
+                    <a href="demo-skincare-cart.html" class="button button-small m-0">View Cart</a>
+                    <span class="top-checkout-price" id="totalPrice">$0.00</span>
                   </div>
                 </div>
               </div>
-              <!-- #top-cart end -->
+              
+                <!-- #top-cart end -->
 
-              <!-- Top Search
+                <!-- Top Search
 							============================================= -->
 
-              <!-- #top-search end -->
+                <!-- #top-search end -->
+              </div>
             </div>
           </div>
         </div>
@@ -1295,9 +1268,7 @@
               data-items-sm="2"
               data-items-md="3"
               data-items-lg="4"
-            >
-             
-            </div>
+            ></div>
           </div>
 
           <!-- Section Ticker
