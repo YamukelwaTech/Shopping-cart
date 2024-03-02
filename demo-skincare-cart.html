@@ -119,77 +119,48 @@
 
       <!-- Content
 		============================================= -->
-      <div id="content">
-        <div class="content-wrap">
-          <div class="container">
-            <div class="row gutter-40">
-              <div class="col-xl-8">
-                <table class="table cart mb-0">
-                  <thead>
-                    <tr>
-                      <th class="fw-normal cart-product-thumbnail">&nbsp;</th>
-                      <th class="fw-normal cart-product-name">Product</th>
-                      <th class="fw-normal cart-product-price">Unit Price</th>
-                      <th class="fw-normal cart-product-quantity">Quantity</th>
-                      <th class="fw-normal cart-product-subtotal">Total</th>
-                    </tr>
-                  </thead>
-                  <tbody id="cartTableBody"></tbody>
-                </table>
-                
-              </div>
-
-              <div class="col-xl-4">
-                <div class="row col-mb-30">
-                  <div class="col-12">
-                    <div
-                      class="grid-inner bg-color bg-opacity-10 p-5 rounded-6"
-                    >
-                      <form class="row mb-0">
-                        <div class="col-12 form-group">
-                          <button
-                            class="button button-small button-border border-color m-0 color h-bg-color h-text-light w-100"
-                          >
-                            Update Totals
-                          </button>
-                        </div>
-                      </form>
-
-                      <div class="line border-color my-4 op-02"></div>
-
-                      <div class="table-responsive">
-                        <table class="table cart cart-totals">
-                          <tbody>
-                            <tr class="cart_item">
-                              <td class="cart-product-name">Cart Subtotal:</td>
-                              <td class="cart-product-name text-end">
-                                <span class="amount"></span>
-                              </td>
-                            </tr>
-                            <tr class="cart_item">
-                              <td class="cart-product-name">Shipping:</td>
-                              <td class="cart-product-name text-end">
-                                <span class="amount"></span>
-                              </td>
-                            </tr>
-                            <tr id="totalRow" class="cart_item">
-                              <td class="cart-product-name">Total:</td>
-                              <td class="cart-product-name text-end">
-                                <span
-                                  class="top-checkout-price"
-                                  id="totalPrice"
-                                ></span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-
-                        <a
-                          href="shop.html"
-                          class="button text-light m-0 w-100 text-center"
-                          >Proceed to Checkout</a
+    <div id="content">
+      <div class="content-wrap">
+        <div class="container">
+          <div class="row gutter-40">
+            <div class="col-xl-8">
+              <table class="table custom-cart-table mb-0">
+                <thead>
+                  <tr>
+                    <th class="fw-normal custom-cart-product-name">Product</th>
+                    <th class="fw-normal custom-cart-product-price">Unit Price</th>
+                    <th class="fw-normal custom-cart-product-quantity">Quantity</th>
+                    <th class="fw-normal custom-cart-product-subtotal">Total</th>
+                  </tr>
+                </thead>
+                <tbody id="customTotalPrice"></tbody>
+              </table>
+            </div>
+    
+            <div class="col-xl-4">
+              <div class="row col-mb-30">
+                <div class="col-12">
+                  <div class="grid-inner bg-color bg-opacity-10 p-5 rounded-6">
+                    <form class="row mb-0">
+                      <div class="col-12 form-group">
+                        <button
+                          class="button button-small button-border border-color m-0 color h-bg-color h-text-light w-100"
                         >
+                          Update Totals
+                        </button>
                       </div>
+                    </form>
+    
+                    <div class="line border-color my-4 op-02"></div>
+    
+                    <div class="table-responsive">
+                      
+    
+                      <a
+                        href="shop.html"
+                        class="button text-light m-0 w-100 text-center"
+                        >Proceed to Checkout</a
+                      >
                     </div>
                   </div>
                 </div>
@@ -198,7 +169,9 @@
           </div>
         </div>
       </div>
-      <!-- #content end -->
+    </div>
+    <!-- #content end -->
+    
 
       <!-- Footer
 		============================================= -->

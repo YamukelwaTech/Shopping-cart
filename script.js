@@ -1,8 +1,8 @@
-var cartItemsArray = [];
+let cartItemsArray = [];
 
 // Load cart items from sessionStorage on page load
 document.addEventListener("DOMContentLoaded", function () {
-  var storedCartItems = sessionStorage.getItem("cartItems");
+  let storedCartItems = sessionStorage.getItem("cartItems");
   if (storedCartItems) {
     cartItemsArray = JSON.parse(storedCartItems);
     updateCartDisplay();
@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Define addToCart in the global scope
 function addToCart(itemName, itemPrice) {
-  var existingItem = cartItemsArray.find(function (item) {
+  let existingItem = cartItemsArray.find(function (item) {
     return item.name === itemName;
   });
 
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    var newItem = {
+    let newItem = {
       name: itemName,
       price: itemPrice,
       quantity: 1,
@@ -33,7 +33,7 @@ function addToCart(itemName, itemPrice) {
 }
 
 function clearCartItem(index) {
-  var currentItem = cartItemsArray[index];
+  let currentItem = cartItemsArray[index];
 
   // Decrease the quantity if more than 1, otherwise remove the item
   if (currentItem.quantity > 1) {
@@ -43,49 +43,60 @@ function clearCartItem(index) {
   }
 
   sessionStorage.setItem("cartItems", JSON.stringify(cartItemsArray));
-  updateCartDisplay();  // Moved this line here
+  updateCartDisplay();
 }
 
 function updateCartDisplay() {
-  var cartItemsElement = document.getElementById("cartItems");
-  var totalPriceElement = document.getElementById("totalPrice");
+  let customTotalPriceElement = document.getElementById("customTotalPrice");
 
-  cartItemsElement.innerHTML = "";
+  // Clear existing content in the table body
+  customTotalPriceElement.innerHTML = "";
 
   cartItemsArray.forEach(function (item, index) {
-    var itemElement = document.createElement("div");
+    // Create a new table row for each item
+    let row = document.createElement("tr");
 
-    // Display item details
-    itemElement.innerHTML =
-      "<p>" +
-      item.name +
-      " - Qty: " +
-      item.quantity +
-      " - R" +
-      (item.price * item.quantity).toFixed(2) +
-      "</p>";
+    // Create table cells for each column (Product, Unit Price, Quantity, Total)
+    let productNameCell = document.createElement("td");
+    productNameCell.textContent = item.name;
+    row.appendChild(productNameCell);
+
+    let unitPriceCell = document.createElement("td");
+    unitPriceCell.textContent = "R" + item.price.toFixed(2);
+    row.appendChild(unitPriceCell);
+
+    let quantityCell = document.createElement("td");
+    quantityCell.textContent = item.quantity;
+    row.appendChild(quantityCell);
+
+    let totalCell = document.createElement("td");
+    totalCell.textContent = "R" + (item.price * item.quantity).toFixed(2);
+    row.appendChild(totalCell);
 
     // Add a small 'x' for clearing the item
-    var clearButton = document.createElement("span");
+    let clearButtonCell = document.createElement("td");
+    let clearButton = document.createElement("span");
     clearButton.innerHTML =
       " <span class='clear-item font-weight-bold text-danger' onclick='clearCartItem(" +
       index +
       ")'>x</span>";
+    clearButtonCell.appendChild(clearButton);
+    row.appendChild(clearButtonCell);
 
-    itemElement.appendChild(clearButton);
-
-    // Add a line break or horizontal rule between items (excluding the last one)
-    if (index < cartItemsArray.length - 1) {
-      // You can choose either line break or horizontal rule
-      // itemElement.innerHTML += '<br>';
-      itemElement.innerHTML += "<hr>";
-    }
-
-    cartItemsElement.appendChild(itemElement);
+    // Append the new row to the table body
+    customTotalPriceElement.appendChild(row);
   });
 
-  var totalPrice = cartItemsArray.reduce(function (total, item) {
+  // Calculate and display the total price
+  let totalPrice = cartItemsArray.reduce(function (total, item) {
     return total + item.price * item.quantity;
   }, 0);
-  totalPriceElement.textContent = "R" + totalPrice.toFixed(2);
+
+  // Display the total price in a separate row at the bottom
+  let totalRow = document.createElement("tr");
+  totalRow.innerHTML =
+    "<td colspan='3' class='fw-bold'>Total</td><td class='fw-bold'>R" +
+    totalPrice.toFixed(2) +
+    "</td><td></td>"; // Empty cell for the 'x' button in the total row
+  customTotalPriceElement.appendChild(totalRow);
 }
