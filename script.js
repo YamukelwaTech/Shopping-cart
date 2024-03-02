@@ -43,7 +43,7 @@ function clearCartItem(index) {
   }
 
   sessionStorage.setItem("cartItems", JSON.stringify(cartItemsArray));
-  updateCartDisplay();
+  updateCartDisplay();  // Moved this line here
 }
 
 function updateCartDisplay() {
