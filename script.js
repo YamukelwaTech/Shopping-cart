@@ -32,6 +32,20 @@ function addToCart(itemName, itemPrice) {
   updateCartDisplay();
 }
 
+function clearCartItem(index) {
+  var currentItem = cartItemsArray[index];
+
+  // Decrease the quantity if more than 1, otherwise remove the item
+  if (currentItem.quantity > 1) {
+    currentItem.quantity -= 1;
+  } else {
+    cartItemsArray.splice(index, 1);
+  }
+
+  sessionStorage.setItem("cartItems", JSON.stringify(cartItemsArray));
+  updateCartDisplay();
+}
+
 function updateCartDisplay() {
   var cartItemsElement = document.getElementById("cartItems");
   var totalPriceElement = document.getElementById("totalPrice");
@@ -40,6 +54,8 @@ function updateCartDisplay() {
 
   cartItemsArray.forEach(function (item, index) {
     var itemElement = document.createElement("div");
+
+    // Display item details
     itemElement.innerHTML =
       "<p>" +
       item.name +
@@ -48,6 +64,15 @@ function updateCartDisplay() {
       " - R" +
       (item.price * item.quantity).toFixed(2) +
       "</p>";
+
+    // Add a small 'x' for clearing the item
+    var clearButton = document.createElement("span");
+    clearButton.innerHTML =
+      " <span class='clear-item font-weight-bold text-danger' onclick='clearCartItem(" +
+      index +
+      ")'>x</span>";
+
+    itemElement.appendChild(clearButton);
 
     // Add a line break or horizontal rule between items (excluding the last one)
     if (index < cartItemsArray.length - 1) {
