@@ -134,169 +134,9 @@
                       <th class="fw-normal cart-product-subtotal">Total</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr class="cart_item">
-                      <td class="cart-product-thumbnail">
-                        <a href="#" class="position-relative">
-                          <img
-                            class="border-0"
-                            width="64"
-                            height="64"
-                            src="demos/skincare/images/single/gallery/1.jpg"
-                            alt="..."
-                          />
-                          <span
-                            class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center"
-                          >
-                            <span class="visually-hidden">Remove Product</span
-                            >&times;
-                          </span>
-                        </a>
-                      </td>
-
-                      <td class="cart-product-name">
-                        <a class="fw-normal" href="#">Clonza Hair Oil</a>
-                      </td>
-
-                      <td class="cart-product-price op-05">
-                        <span class="amount">$19.99</span>
-                      </td>
-
-                      <td
-                        class="cart-product-quantity cart cart-border cart-border-2"
-                      >
-                        <div class="quantity">
-                          <button type="button" class="minus">
-                            <i class="uil uil-minus"></i>
-                          </button>
-                          <input
-                            type="number"
-                            step="1"
-                            min="1"
-                            name="quantity"
-                            value="2"
-                            title="Qty"
-                            class="qty border-0"
-                          />
-                          <button type="button" class="plus">
-                            <i class="uil uil-plus"></i>
-                          </button>
-                        </div>
-                      </td>
-
-                      <td class="cart-product-subtotal">
-                        <span class="amount">$39.98</span>
-                      </td>
-                    </tr>
-                    <tr class="cart_item">
-                      <td class="cart-product-thumbnail">
-                        <a href="#" class="position-relative">
-                          <img
-                            class="border-0"
-                            width="64"
-                            height="64"
-                            src="demos/skincare/images/products/14.jpg"
-                            alt="..."
-                          />
-                          <span
-                            class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center"
-                          >
-                            <span class="visually-hidden">Remove Product</span
-                            >&times;
-                          </span>
-                        </a>
-                      </td>
-
-                      <td class="cart-product-name">
-                        <a class="fw-normal" href="#">Clove Super Serum</a>
-                      </td>
-
-                      <td class="cart-product-price op-05">
-                        <span class="amount">$24.99</span>
-                      </td>
-
-                      <td
-                        class="cart-product-quantity cart cart-border cart-border-2"
-                      >
-                        <div class="quantity">
-                          <button type="button" class="minus">
-                            <i class="uil uil-minus"></i>
-                          </button>
-                          <input
-                            type="number"
-                            step="1"
-                            min="1"
-                            name="quantity"
-                            value="1"
-                            title="Qty"
-                            class="qty border-0"
-                          />
-                          <button type="button" class="plus">
-                            <i class="uil uil-plus"></i>
-                          </button>
-                        </div>
-                      </td>
-
-                      <td class="cart-product-subtotal">
-                        <span class="amount">$24.99</span>
-                      </td>
-                    </tr>
-                    <tr class="cart_item">
-                      <td class="cart-product-thumbnail">
-                        <a href="#" class="position-relative">
-                          <img
-                            class="border-0"
-                            width="64"
-                            height="64"
-                            src="demos/skincare/images/products/15.jpg"
-                            alt="..."
-                          />
-                          <span
-                            class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center"
-                            ><span class="visually-hidden">Remove Product</span
-                            >&times;</span
-                          >
-                        </a>
-                      </td>
-
-                      <td class="cart-product-name">
-                        <a class="fw-normal" href="#"
-                          >Âimtze Cream &amp; Lotions</a
-                        >
-                      </td>
-
-                      <td class="cart-product-price op-05">
-                        <span class="amount">$13.99</span>
-                      </td>
-
-                      <td
-                        class="cart-product-quantity cart cart-border cart-border-2"
-                      >
-                        <div class="quantity">
-                          <button type="button" class="minus">
-                            <i class="uil uil-minus"></i>
-                          </button>
-                          <input
-                            type="number"
-                            step="1"
-                            min="1"
-                            name="quantity"
-                            value="3"
-                            title="Qty"
-                            class="qty border-0"
-                          />
-                          <button type="button" class="plus">
-                            <i class="uil uil-plus"></i>
-                          </button>
-                        </div>
-                      </td>
-
-                      <td class="cart-product-subtotal">
-                        <span class="amount">$41.97</span>
-                      </td>
-                    </tr>
-                  </tbody>
+                  <tbody id="cartTableBody"></tbody>
                 </table>
+                
               </div>
 
               <div class="col-xl-4">
@@ -322,24 +162,23 @@
                           <tbody>
                             <tr class="cart_item">
                               <td class="cart-product-name">Cart Subtotal:</td>
-
                               <td class="cart-product-name text-end">
-                                <span class="amount">R106.94</span>
+                                <span class="amount"></span>
                               </td>
                             </tr>
                             <tr class="cart_item">
                               <td class="cart-product-name">Shipping:</td>
-
                               <td class="cart-product-name text-end">
-                                <span class="amount">R399</span>
+                                <span class="amount"></span>
                               </td>
                             </tr>
                             <tr id="totalRow" class="cart_item">
                               <td class="cart-product-name">Total:</td>
                               <td class="cart-product-name text-end">
-                                <span class="top-checkout-price" id="totalPrice"
-                                  >R0.00</span
-                                >
+                                <span
+                                  class="top-checkout-price"
+                                  id="totalPrice"
+                                ></span>
                               </td>
                             </tr>
                           </tbody>
