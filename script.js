@@ -1,6 +1,5 @@
 let cartItemsArray = [];
 
-// Load cart items from sessionStorage on page load
 document.addEventListener("DOMContentLoaded", function () {
   let storedCartItems = sessionStorage.getItem("cartItems");
   if (storedCartItems) {
@@ -9,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Define addToCart in the global scope
 function addToCart(itemName, itemPrice) {
   let existingItem = cartItemsArray.find(function (item) {
     return item.name === itemName;
@@ -26,7 +24,6 @@ function addToCart(itemName, itemPrice) {
     cartItemsArray.push(newItem);
   }
 
-  // Save updated cart items to sessionStorage
   sessionStorage.setItem("cartItems", JSON.stringify(cartItemsArray));
 
   updateCartDisplay();
@@ -35,7 +32,6 @@ function addToCart(itemName, itemPrice) {
 function clearCartItem(index) {
   let currentItem = cartItemsArray[index];
 
-  // Decrease the quantity if more than 1, otherwise remove the item
   if (currentItem.quantity > 1) {
     currentItem.quantity -= 1;
   } else {
@@ -46,17 +42,34 @@ function clearCartItem(index) {
   updateCartDisplay();
 }
 
+function decreaseQuantity(index) {
+  let currentItem = cartItemsArray[index];
+
+  if (currentItem.quantity > 1) {
+    currentItem.quantity -= 1;
+  } else {
+    cartItemsArray.splice(index, 1);
+  }
+
+  sessionStorage.setItem("cartItems", JSON.stringify(cartItemsArray));
+  updateCartDisplay();
+}
+
+function increaseQuantity(index) {
+  let currentItem = cartItemsArray[index];
+  currentItem.quantity += 1;
+
+  sessionStorage.setItem("cartItems", JSON.stringify(cartItemsArray));
+  updateCartDisplay();
+}
+
 function updateCartDisplay() {
   let customTotalPriceElement = document.getElementById("customTotalPrice");
-
-  // Clear existing content in the table body
   customTotalPriceElement.innerHTML = "";
 
   cartItemsArray.forEach(function (item, index) {
-    // Create a new table row for each item
     let row = document.createElement("tr");
 
-    // Create table cells for each column (Product, Unit Price, Quantity, Total)
     let productNameCell = document.createElement("td");
     productNameCell.textContent = item.name;
     row.appendChild(productNameCell);
@@ -66,14 +79,36 @@ function updateCartDisplay() {
     row.appendChild(unitPriceCell);
 
     let quantityCell = document.createElement("td");
-    quantityCell.textContent = item.quantity;
+    quantityCell.classList.add("quantity-cell");
+
+    let decreaseButton = document.createElement("span");
+    decreaseButton.textContent = "-";
+    decreaseButton.classList.add("quantity-button");
+    decreaseButton.addEventListener("click", function () {
+      decreaseQuantity(index);
+    });
+
+    let quantityText = document.createElement("span");
+    quantityText.textContent = item.quantity;
+    quantityText.classList.add("quantity-text");
+
+    let increaseButton = document.createElement("span");
+    increaseButton.textContent = "+";
+    increaseButton.classList.add("quantity-button");
+    increaseButton.addEventListener("click", function () {
+      increaseQuantity(index);
+    });
+
+    quantityCell.appendChild(decreaseButton);
+    quantityCell.appendChild(quantityText);
+    quantityCell.appendChild(increaseButton);
+
     row.appendChild(quantityCell);
 
     let totalCell = document.createElement("td");
     totalCell.textContent = "R" + (item.price * item.quantity).toFixed(2);
     row.appendChild(totalCell);
 
-    // Add a small 'x' for clearing the item
     let clearButtonCell = document.createElement("td");
     let clearButton = document.createElement("span");
     clearButton.innerHTML =
@@ -83,17 +118,14 @@ function updateCartDisplay() {
     clearButtonCell.appendChild(clearButton);
     row.appendChild(clearButtonCell);
 
-    // Append the new row to the table body
     customTotalPriceElement.appendChild(row);
   });
 
-  // Calculate and display the total price
   let subtotal = cartItemsArray.reduce(function (total, item) {
     return total + item.price * item.quantity;
   }, 0);
 
-  // Calculate total price and tax
-  let taxRate = 0.25; // 25% tax
+  let taxRate = 0.25;
   let tax = subtotal * taxRate;
   let totalPrice = subtotal + tax;
 
@@ -118,3 +150,4 @@ function updateCartDisplay() {
     "</td><td></td>";
   customTotalPriceElement.appendChild(totalRow);
 }
+
