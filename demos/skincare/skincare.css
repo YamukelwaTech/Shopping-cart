@@ -1,12 +1,13 @@
 /* ----------------------------------------------------------------
 	Canvas: Shop - 2
 -----------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 
 :root {
   --cnvs-themecolor: #979797;
   --cnvs-themecolor-rgb: white;
-  --cnvs-body-font: "tenon", sans-serif;
-  --cnvs-primary-font: "abril-display", serif;
+  --cnvs-body-font: "PT Sans Narrow", sans-serif;
+  --cnvs-primary-font: "PT Sans Narrow", sans-serif;
   --cnvs-body-color: white;
   --cnvs-color: #0088cc;
   --cnvs-color2: white;
